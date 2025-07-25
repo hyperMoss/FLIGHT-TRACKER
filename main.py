@@ -125,7 +125,7 @@ def DataProcessing(FlightsDiv):
 def GetTopThreeFlights(allFlightsDiv):
     """获取价格最低的三个航班"""
     flights_data = []
-    for FlightsDiv in allFlightsDiv[1:]:
+    for FlightsDiv in allFlightsDiv[0:]:
         flight_info = DataProcessing(FlightsDiv)
         print(flight_info)
         if flight_info and flight_info['price'] != 'null':
