@@ -204,7 +204,7 @@ def StartScheduledCrawling(interval_minutes=30, webhook_url=None):
 
 if __name__ == "__main__":
     # 飞书机器人 webhook 地址
-    FEISHU_WEBHOOK = "https://open.feishu.cn/open-apis/bot/v2/hook/37da1252-cd91-4492-ac9b-d4f7fe56e6c3"
+    FEISHU_WEBHOOK = ""
     
     # 启动定时抓取，每30分钟执行一次，并推送到飞书
     StartScheduledCrawling(15, FEISHU_WEBHOOK)
