@@ -52,6 +52,12 @@ def FlightsPage(departurePlace, arrivePlace, departureDate, headless=True):
         page = WebPage()
     
     page.get('https://flights.ctrip.com/online/list/oneway-' + departurePlace + '-' + arrivePlace + '?depdate='+ departureDate + '&cabin=y_s_c_f&adult=1&child=0&infant=0')
+    # 时间段筛选
+    page('#filter_item_time').click()
+    sleep(1)
+    page("@@u_key=filter_toggle_entry@@u_remark=点击筛选项[FILTER_GROUP_TIME.DEPART/晚上 18~24点]").click()
+    sleep(1)
+    # 隐藏共享航班
     page('#filter_item_other').click()
     sleep(1)
     page("@@u_key=filter_toggle_entry@@u_remark=点击筛选项[FILTER_GROUP_OTHER.HIDE_SHARED_FLIGHTS/隐藏共享航班]").click()
